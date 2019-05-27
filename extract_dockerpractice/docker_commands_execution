@@ -1,0 +1,10 @@
+docker rmi -f 9eb8d92c3433 20e02bc92886 20e02bc92886 63d5d62a84eb 63d5d62a84eb 89610051f8b8 89610051f8b8 4932cad1ad92 b3a0776f54cc b3a0776f54cc 7f8ea317056a d007270edc07 624ea46c0f18
+
+docker images -f “dangling=true” -q 
+
+docker rmi -f “dangling=true” -q
+
+docker rmi -f $(docker images -f "dangling=true" -q)
+
+
+
